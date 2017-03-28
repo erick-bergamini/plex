@@ -56,4 +56,19 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install git oracle-java8-jdk vim htop
 ```
 
-5. 
+## Download the raw stuff
+
+1. Install all your stuff on /opt
+
+2. Clone sickrage project
+
+```
+# git clone https://github.com/SickRage/SickRage.git sickrage
+```
+
+3. Clone couchpotato project
+
+```
+# git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
+```
+
