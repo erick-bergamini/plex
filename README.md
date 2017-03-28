@@ -53,7 +53,7 @@ Collection of bash scripts to automate my plexmediaserver
 4. Then I installed aditional packages
 
 ```
-# apt install git oracle-java8-jdk vim htop
+# apt install oracle-java8-jdk git vim htop
 ```
 
 ## Download the raw stuff
@@ -73,7 +73,7 @@ Collection of bash scripts to automate my plexmediaserver
 # wget https://github.com/filebot/filebot/raw/master/installer/portable/filebot.sh
 # chmod +x update-filebot.sh
 # chmod +x filebot.sh
-# ./update-filebot.sh
+# /opt/filebot/update-filebot.sh
 # /opt/filebot/filebot.sh
 ```
 
@@ -81,9 +81,9 @@ Collection of bash scripts to automate my plexmediaserver
 
 ```
 # cd /opt
-# git clone https://github.com/SickRage/SickRage.git sickrage
 # addgroup --system sickrage
 # adduser --disabled-password --system --home /var/lib/sickrage --gecos "SickRage" --ingroup sickrage sickrage
+# git clone https://github.com/SickRage/SickRage.git sickrage
 # chown sickrage:sickrage /opt/sickrage
 # cp /opt/sickrage/runscripts/init.debian /etc/init.d/sickrage
 # chown root:root /etc/init.d/sickrage
