@@ -94,7 +94,7 @@ Collection of bash scripts to automate my plexmediaserver
 # service sickrage start
 ```
 
-3. Install couchpotato
+4. Install couchpotato
 
 ```
 # cd /opt
@@ -106,10 +106,10 @@ Collection of bash scripts to automate my plexmediaserver
 # chown root:root /etc/init.d/couchpotato
 # chmod 755 /etc/init.d/couchpotato
 # update-rc.d couchpotato defaults
-
+# mkdir -p /var/run/couchpotato
+# chown couchpotato:couchpotato /var/run/couchpotato
+# service couchpotato start
 ```
-
-
 
 5. Clone this project
 
