@@ -60,6 +60,10 @@ Collection of bash scripts to automate my plexmediaserver
 
 1. Install all your stuff on /opt
 
+```
+# cd /opt
+```
+
 2. Install filebot
 
 ```
@@ -70,12 +74,24 @@ Collection of bash scripts to automate my plexmediaserver
 # chmod +x update-filebot.sh
 # chmod +x filebot.sh
 # ./update-filebot.sh
+# /opt/filebot/filebot.sh
 ```
 
 3. Clone sickrage project
 
 ```
+# cd /opt
 # git clone https://github.com/SickRage/SickRage.git sickrage
+# addgroup --system sickrage
+# adduser --disabled-password --system --home /var/lib/sickrage --gecos "SickRage" --ingroup sickrage sickrage
+# chown sickrage:sickrage /opt/sickrage
+# cp /opt/sickrage/runscripts/init.debian /etc/init.d/sickrage
+# chown root:root /etc/init.d/sickrage
+# chmod 755 /etc/init.d/sickrage
+# update-rc.d sickrage defaults
+# mkdir -p /var/run/sickrage
+# chown sickrage:sickrage /var/run/sickrage
+# service sickrage start
 ```
 
 3. Clone couchpotato project
