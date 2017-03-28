@@ -8,14 +8,14 @@ Collection of bash scripts to automate my plexmediaserver
 - I'm using a Raspberry Pi 3 Model B (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
 - You'll probably want an attached storage or a network one to store your media files
 
-## I choose the easy one for Operational System
+## I choose the easy one for the Operational System
 
 - I'm using a NOOBs Lite version installer (https://www.raspberrypi.org/downloads/noobs/) and doing a Raspbian Lite (minimal) install
 - Default user "pi", default password "raspberry"
 
 ## Configure your stuff
 
-- Change your passwords, add your users
+- Change your passwords and add your users
 - Configure any aditional interfaces, wired is always preferred.
 - Configure your hostname
 
@@ -77,7 +77,7 @@ Collection of bash scripts to automate my plexmediaserver
 # /opt/filebot/filebot.sh
 ```
 
-3. Clone sickrage project
+3. Install sickrage
 
 ```
 # cd /opt
@@ -94,10 +94,19 @@ Collection of bash scripts to automate my plexmediaserver
 # service sickrage start
 ```
 
-3. Clone couchpotato project
+3. Install couchpotato
 
 ```
+# cd /opt
+# addgroup --system couchpotato
+# adduser --disabled-password --system --home /var/lib/couchpotato --gecos "CouchPotato" --ingroup couchpotato couchpotato
 # git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
+# chown couchpotato:couchpotato /opt/couchpotato
+# cp couchpotato/init/ubuntu /etc/init.d/couchpotato
+# chown root:root /etc/init.d/couchpotato
+# chmod 755 /etc/init.d/couchpotato
+# update-rc.d couchpotato defaults
+
 ```
 
 
