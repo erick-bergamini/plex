@@ -5,40 +5,53 @@ Collection of bash scripts to automate my plexmediaserver
 
 ## Hardware
 
-- I'm using a Raspberry Pi 3 Model B (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) with an attached Seagate External Drive 2TB
+- I'm using a Raspberry Pi 3 Model B (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- You'll probably want an attached storage of a network one to store your media files
 
 ## Operational System
 
-- I'm using a NOOBs (https://www.raspberrypi.org/downloads/noobs/) version installer for Raspbian (all default install)
+- I'm using a NOOBs Lite version installer (https://www.raspberrypi.org/downloads/noobs/) and doing a Raspbian Lite (minimal) install
+- Default user "pi", default password "raspberry"
+
+## Configure your network
+
+- Configure any aditional interfaces, wired is always preferred.
+- Configure your hostname
+
+```
+# hostname-ctl set-hostname plex
+```
+
+- Edit your /etc/hosts accordingly
 
 ## Packages
 
-1. After Raspbian install I did a full update as always
+1. After Raspbian Lite install I did a full update as always
 
 ```
-$ sudo apt-get update && sudo apt-get upgrade -y
-$ sudo apt-get update && sudo apt-get dist-upgrade
+# apt update
+# apt upgrade
+# apt dist-upgrade
 ```
 
 2. Added a PMS repository with those commands
 
 ```
-$ sudo apt-get install apt-transport-https -y --force-yes
-$ wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key  | sudo apt-key add -
-$ echo "deb https://dev2day.de/pms/ jessie main" | sudo tee /etc/apt/sources.list.d/pms.list
-$ sudo apt-get update
-$ sudo apt-get install -t jessie plexmediaserver -y
+# wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
+# echo "deb https://dev2day.de/pms/ jessie main" | tee /etc/apt/sources.list.d/pms.list
+# apt update
+# apt install -t jessie plexmediaserver
 ```
 
 3. Then I installed my seedbox packages
 
 ```
-$ sudo apt-get install deluged deluge-console deluge-web
+# apt-get install --no-install-recommends deluged deluge-console deluge-web
 ```
 
 4. Then I installed aditional packages
 
 ```
-$ sudo apt-get install youtube-dl oracle-java8-jdk vim htop rsync
+# apt install git oracle-java8-jdk vim htop rsync
 ```
 
