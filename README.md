@@ -72,3 +72,14 @@ Collection of bash scripts to automate my plexmediaserver
 # git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
 ```
 
+4. Clone filebot project
+
+```
+# git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
+```
+
+5. Clone this project
+
+```
+# git clone https://github.com/allangarcia/seedbox-to-plex-automation.git scripts
+```
