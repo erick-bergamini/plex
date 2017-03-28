@@ -60,7 +60,19 @@ Collection of bash scripts to automate my plexmediaserver
 
 1. Install all your stuff on /opt
 
-2. Clone sickrage project
+2. Install filebot
+
+```
+# mkdir -p /opt/filebot
+# cd /opt/filebot
+# wget https://github.com/filebot/filebot/raw/master/installer/portable/update-filebot.sh
+# wget https://github.com/filebot/filebot/raw/master/installer/portable/filebot.sh
+# chmod +x update-filebot.sh
+# chmod +x filebot.sh
+# ./update-filebot.sh
+```
+
+3. Clone sickrage project
 
 ```
 # git clone https://github.com/SickRage/SickRage.git sickrage
@@ -72,11 +84,7 @@ Collection of bash scripts to automate my plexmediaserver
 # git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
 ```
 
-4. Clone filebot project
 
-```
-# git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
-```
 
 5. Clone this project
 
