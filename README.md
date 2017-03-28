@@ -1,20 +1,21 @@
 # seedbox-to-plex-automation
 Collection of bash scripts to automate my plexmediaserver
 
-# How did I installed my plexmediaserver? (STILL INCOMPLETE)
+# How did I installed my Plex on Raspberry Pi 3?
 
-## Hardware
+## This is my hardware
 
 - I'm using a Raspberry Pi 3 Model B (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-- You'll probably want an attached storage of a network one to store your media files
+- You'll probably want an attached storage or a network one to store your media files
 
-## Operational System
+## I choose the easy one for Operational System
 
 - I'm using a NOOBs Lite version installer (https://www.raspberrypi.org/downloads/noobs/) and doing a Raspbian Lite (minimal) install
 - Default user "pi", default password "raspberry"
 
-## Configure your network
+## Configure your stuff
 
+- Change your passwords, add your users
 - Configure any aditional interfaces, wired is always preferred.
 - Configure your hostname
 
@@ -24,7 +25,7 @@ Collection of bash scripts to automate my plexmediaserver
 
 - Edit your /etc/hosts accordingly
 
-## Packages
+## Beginning the installation
 
 1. After Raspbian Lite install I did a full update as always
 
@@ -34,7 +35,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt dist-upgrade
 ```
 
-2. Added a PMS repository with those commands
+2. Added a PMS repository and installed with those commands
 
 ```
 # wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
@@ -46,12 +47,13 @@ Collection of bash scripts to automate my plexmediaserver
 3. Then I installed my seedbox packages
 
 ```
-# apt-get install --no-install-recommends deluged deluge-console deluge-web
+# apt install deluged deluge-console deluge-web
 ```
 
 4. Then I installed aditional packages
 
 ```
-# apt install git oracle-java8-jdk vim htop rsync
+# apt install git oracle-java8-jdk vim htop
 ```
 
+5. 
