@@ -50,6 +50,8 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install deluged deluge-console deluge-web
 ```
 
+TODO: Start deluge and deluge-web on boot.
+
 4. Then I installed aditional packages
 
 ```
@@ -114,5 +116,12 @@ Collection of bash scripts to automate my plexmediaserver
 5. Clone this project
 
 ```
+# cd /opt
 # git clone https://github.com/allangarcia/seedbox-to-plex-automation.git scripts
+```
+
+## Configuration
+
+```
+Still in development.
 ```
