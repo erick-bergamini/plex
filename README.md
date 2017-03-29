@@ -24,6 +24,11 @@ Collection of bash scripts to automate my plexmediaserver
 ```
 
 - Edit your /etc/hosts accordingly
+- Configure your timezone
+
+```
+# dpkg-reconfigure tzdata
+```
 
 ## Beginning the installation
 
