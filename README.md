@@ -55,8 +55,6 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install deluged deluge-console deluge-web
 ```
 
-TODO: Start deluge and deluge-web on boot.
-
 4. Then I installed aditional packages
 
 ```
