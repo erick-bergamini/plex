@@ -55,6 +55,10 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install deluged deluge-console deluge-web
 ```
 
+TODO: Check if deluge is the best for this job.
+TODO1: Verify the best way to start deluge-web
+TODO2: Maybe consider rtorrent with rutorrent?
+
 4. Then I installed aditional packages
 
 ```
