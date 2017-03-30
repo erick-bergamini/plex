@@ -53,11 +53,10 @@ Collection of bash scripts to automate my plexmediaserver
 
 ```
 # apt install deluged deluge-console deluge-web
+# sed -i "s/ENABLE_DELUGED=0/ENABLE_DELUGED=1/" /etc/default/deluged
+# service deluged start
+# echo "deluged:deluged:10" >> /var/lib/deluged/config/auth 
 ```
-
-TODO: Check if deluge is the best for this job.
-TODO1: Verify the best way to start deluge-web
-TODO2: Maybe consider rtorrent with rutorrent?
 
 4. Then I installed aditional packages
 
