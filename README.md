@@ -58,6 +58,16 @@ Collection of bash scripts to automate my plexmediaserver
 # echo "deluged:deluged:10" >> /var/lib/deluged/config/auth 
 ```
 
+No init script is provided for deluge-web package unfortunately, so install mine. ;-D
+
+```
+# cd /etc/systemd/system/
+# wget https://gist.github.com/allangarcia/146e8db29e5d45766aee16043e7fb347/raw/fce670ac72db3957029d4e1c02ae8603c4156abc/deluge-web.service
+# systemctl enable deluge-web
+# systemctl start deluge-web
+# systemctl status deluge-web
+```
+
 4. Then I installed aditional packages
 
 ```
