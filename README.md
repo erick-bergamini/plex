@@ -167,7 +167,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 
 ```
 # cd /etc/systemd/system
-# wget https://gist.github.com/allangarcia/203e7d57e5e213b54f73509c24e089df/raw/f5b7ee4b3d4765353f1d26ffd040083837c77f0f/mnt-media.mount
+# wget https://gist.github.com/allangarcia/203e7d57e5e213b54f73509c24e089df/raw/6fff42aca4c1e88478f1f52ec34d8660178d5a21/mnt-media.mount
 ```
 
 5. Edit this file and change the UUID part for your UUID copied previously
@@ -180,9 +180,9 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 
 ```
 # systemctl daemon-reload
+# systemctl enable mnt-media.mount
 # systemctl start mnt-media.mount
 # systemctl status mnt-media.mount
-# systemctl enable mnt-media.mount
 ```
 
 ## Configuration
