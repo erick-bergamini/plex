@@ -40,7 +40,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt dist-upgrade
 ```
 
-2. Added a PMS repository and installed with those commands
+1. Added a PMS repository and installed with those commands
 
 ```
 # wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
@@ -49,7 +49,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install -t jessie plexmediaserver
 ```
 
-3. Then I installed my seedbox packages
+1. Then I installed my seedbox packages
 
 ```
 # apt install deluged deluge-console deluge-web
@@ -68,7 +68,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # systemctl status deluge-web
 ```
 
-4. Then I installed aditional packages
+1. Then I installed aditional packages
 
 ```
 # apt install oracle-java8-jdk git vim htop
@@ -76,7 +76,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 
 ## Download the raw stuff
 
-1. Install all your stuff on /opt
+2. Install all your stuff on /opt
 
 ```
 # cd /opt
@@ -95,7 +95,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # /opt/filebot/filebot.sh
 ```
 
-3. Install sickrage
+2. Install sickrage
 
 ```
 # cd /opt
@@ -112,7 +112,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # service sickrage start
 ```
 
-4. Install couchpotato
+2. Install couchpotato
 
 ```
 # cd /opt
@@ -129,7 +129,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # service couchpotato start
 ```
 
-5. Clone this project
+2. Clone this project
 
 ```
 # cd /opt
