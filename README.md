@@ -185,6 +185,17 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # systemctl status mnt-media.mount
 ```
 
+- Make directories to hold your downloads
+
+```
+# cd /mnt/media
+# mkdir Torrents
+# cd Torrents
+# mkdir Backups Completed Downloading Inbox
+# cd /mnt/media
+# chown -R debian-deluged.debian-deluged Torrents
+```
+
 ## Configuration
 
 ```
