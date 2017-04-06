@@ -136,6 +136,55 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # git clone https://github.com/allangarcia/seedbox-to-plex-automation.git scripts
 ```
 
+## Mount your external media
+
+1. Make your mountpoint
+
+```
+# mkdir -p /mnt/media
+```
+
+2. Plug your device, wipe the partition table, make a new partition and filesystem
+
+**PS: DON'T DO THIS IF YOU ALREADY HAVE MEDIA FILES, DON'T BE STUPID!!!**
+
+```
+# fdisk /dev/sda
+# mkfs.ext4 /dev/sda1
+```
+
+3. Get the UUID of your new partition, and write down (CTRL+C!) the UUID= part
+
+```
+# blkid /dev/sda1
+```
+
+```
+/dev/sda1: UUID="a01e4f27-1f10-42dc-bf94-a4e48d7b9bfe" TYPE="ext4" PARTUUID="5850a332-01"
+```
+
+4. Download the mount file for systemd and enable it
+
+```
+# cd /etc/systemd/system
+# wget https://gist.github.com/allangarcia/203e7d57e5e213b54f73509c24e089df/raw/f5b7ee4b3d4765353f1d26ffd040083837c77f0f/mnt-media.mount
+```
+
+5. Edit this file and change the UUID part for your UUID copied previously
+
+```
+# sed -i "s/by-uuid\/.*/by-uuid\/YOUR-UUID-GOES-HERE/" mnt-media.mount
+```
+
+6. Reload systemd daemon, enable the service and start it
+
+```
+# systemctl daemon-reload
+# systemctl start mnt-media.mount
+# systemctl status mnt-media.mount
+# systemctl enable mnt-media.mount
+```
+
 ## Configuration
 
 ```
