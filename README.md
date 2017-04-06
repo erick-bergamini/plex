@@ -32,7 +32,7 @@ Collection of bash scripts to automate my plexmediaserver
 
 ## Beginning the installation
 
-1. After Raspbian Lite install I did a full update as always
+- After Raspbian Lite install I did a full update as always
 
 ```
 # apt update
@@ -40,7 +40,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt dist-upgrade
 ```
 
-1. Added a PMS repository and installed with those commands
+- Added a PMS repository and installed with those commands
 
 ```
 # wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
@@ -49,7 +49,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install -t jessie plexmediaserver
 ```
 
-1. Then I installed my seedbox packages
+- Then I installed my seedbox packages
 
 ```
 # apt install deluged deluge-console deluge-web
@@ -58,7 +58,7 @@ Collection of bash scripts to automate my plexmediaserver
 # echo "deluged:deluged:10" >> /var/lib/deluged/config/auth 
 ```
 
-No init script is provided for __deluge-web__ package unfortunately, so install mine. ;-D
+PS: No init script is provided for __deluge-web__ package unfortunately, so install mine. ;-D
 
 ```
 # cd /etc/systemd/system/
@@ -68,7 +68,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # systemctl status deluge-web
 ```
 
-1. Then I installed aditional packages
+- Then I installed aditional packages
 
 ```
 # apt install oracle-java8-jdk git vim htop
@@ -76,13 +76,13 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 
 ## Download the raw stuff
 
-2. Install all your stuff on /opt
+- Install all your stuff on /opt
 
 ```
 # cd /opt
 ```
 
-2. Install filebot
+- Install filebot
 
 ```
 # mkdir -p /opt/filebot
@@ -95,7 +95,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # /opt/filebot/filebot.sh
 ```
 
-2. Install sickrage
+- Install sickrage
 
 ```
 # cd /opt
@@ -112,7 +112,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # service sickrage start
 ```
 
-2. Install couchpotato
+- Install couchpotato
 
 ```
 # cd /opt
@@ -129,7 +129,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # service couchpotato start
 ```
 
-2. Clone this project
+- Clone this project
 
 ```
 # cd /opt
@@ -138,13 +138,13 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 
 ## Mount your external media
 
-1. Make your mountpoint
+- Make your mountpoint
 
 ```
 # mkdir -p /mnt/media
 ```
 
-2. Plug your device, wipe the partition table, make a new partition and filesystem
+- Plug your device, wipe the partition table, make a new partition and filesystem
 
 **PS: DON'T DO THIS IF YOU ALREADY HAVE MEDIA FILES, DON'T BE STUPID!!!**
 
@@ -153,7 +153,7 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 # mkfs.ext4 /dev/sda1
 ```
 
-3. Get the UUID of your new partition, and write down (CTRL+C!) the UUID= part
+- Get the UUID of your new partition, and write down (CTRL+C!) the UUID= part
 
 ```
 # blkid /dev/sda1
@@ -163,20 +163,20 @@ No init script is provided for __deluge-web__ package unfortunately, so install 
 /dev/sda1: UUID="a01e4f27-1f10-42dc-bf94-a4e48d7b9bfe" TYPE="ext4" PARTUUID="5850a332-01"
 ```
 
-4. Download the mount file for systemd and enable it
+- Download the mount file for systemd and enable it
 
 ```
 # cd /etc/systemd/system
 # wget https://gist.github.com/allangarcia/203e7d57e5e213b54f73509c24e089df/raw/6fff42aca4c1e88478f1f52ec34d8660178d5a21/mnt-media.mount
 ```
 
-5. Edit this file and change the UUID part for your UUID copied previously
+- Edit this file and change the UUID part for your UUID copied previously
 
 ```
 # sed -i "s/by-uuid\/.*/by-uuid\/YOUR-UUID-GOES-HERE/" mnt-media.mount
 ```
 
-6. Reload systemd daemon, enable the service and start it
+- Reload systemd daemon, enable the service and start it
 
 ```
 # systemctl daemon-reload
