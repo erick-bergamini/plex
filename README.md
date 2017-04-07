@@ -196,6 +196,12 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # chown -R debian-deluged.debian-deluged Torrents
 ```
 
+- Export to env the place of your media
+
+```
+# echo MEDIA_PATH=/mnt/media >> /etc/environment
+```
+
 ## Configuration
 
 ```
