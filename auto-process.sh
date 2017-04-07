@@ -14,7 +14,7 @@ WORKING_PATH="/opt/filebot/cache"
 sudo /opt/filebot/filebot.sh \
 	-script fn:amc \
 	-non-strict \
-	--action move \
+	--action duplicate \
 	--conflict auto \
 	--output "${OUTPUT_PATH}" \
 	--log-file "${WORKING_PATH}/filebot-process.log" \
