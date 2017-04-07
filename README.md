@@ -74,6 +74,13 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # apt install oracle-java8-jdk git vim htop
 ```
 
+- Add some users to sudo 'cause some scripts require root access
+
+```
+# sed -i "s/^%sudo.*/%sudo\tALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
+# adduser debian-deluged sudo
+```
+
 ## Download the raw stuff
 
 - Install all your stuff on /opt
