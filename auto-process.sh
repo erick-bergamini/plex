@@ -6,8 +6,10 @@ TORRENT_ID="$1"
 TORRENT_NAME="$2"
 TORRENT_PATH="$3"
 
-OUTPUT_PATH="/mnt/MEDIA"
+OUTPUT_PATH="$MEDIA_PATH"
 WORKING_PATH="/opt/filebot/cache"
+
+[ -d $WORKING_PATH ] || mkdir -p $WORKING_PATH
 
 sudo /opt/filebot/filebot.sh \
 	-script fn:amc \

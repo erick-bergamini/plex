@@ -6,6 +6,14 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 find /mnt/MEDIA/Movies/ -type f -iname "* (????).???" -exec /opt/filebot/filebot.sh --lang=en -get-subtitles {} \;
 find /mnt/MEDIA/Movies/ -type f -iname "* (????).???" -exec /opt/filebot/filebot.sh --lang=pb -get-subtitles {} \;
 
+# Check here if the subtitles was found
+
+#### if subtitle was ok on this movie, add it to exclude list
+
+#### Change the above find command to exclude paths from exclude list
+
+#### Do the same to tv shows down here
+
 # Fix all missing subtitles from TV Shows
 find /mnt/MEDIA/TV\ Shows/ -type f -iregex "^.*\.\(mkv\|mp4\|m4v\|avi\)$" -exec /opt/filebot/filebot.sh --lang=en -get-subtitles {} \;
 find /mnt/MEDIA/TV\ Shows/ -type f -iregex "^.*\.\(mkv\|mp4\|m4v\|avi\)$" -exec /opt/filebot/filebot.sh --lang=pb -get-subtitles {} \;
