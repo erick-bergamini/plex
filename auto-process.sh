@@ -15,16 +15,15 @@ sudo /opt/filebot/filebot.sh \
 	-script fn:amc \
 	-non-strict \
 	--action duplicate \
-	--conflict auto \
+	--conflict override \
 	--output "${OUTPUT_PATH}" \
 	--log-file "${WORKING_PATH}/filebot-process.log" \
 	--def \
 		subtitles=eng,pob \
-		excludeList=${WORKING_PATH}/filebot-excludes.txt \
-		extras=y \
+		extras=n \
 		unsorted=y \
-		music=y \
 		artwork=y \
+		excludeList=${WORKING_PATH}/filebot-excludes.txt \
 		"ut_dir=$TORRENT_PATH/$TORRENT_NAME" \
 		"ut_kind=multi" \
 		"ut_title=$TORRENT_NAME" \
