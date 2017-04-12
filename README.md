@@ -71,7 +71,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 - Then I installed aditional packages
 
 ```
-# apt install oracle-java8-jdk git vim htop
+# apt install oracle-java8-jdk git vim htop mediainfo
 ```
 
 - Add some users to sudo 'cause some scripts require root access
@@ -210,6 +210,16 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 ```
 
 ## Configuration
+
+- Configure filebot to autenticate into opensubtitles
+
+```
+# /opt/filebot/filebot.sh -script fn:configure
+Enter OpenSubtitles username: YOUR USERNAME
+Enter OpenSubtitles password: YOUR PASSWORD
+Testing OpenSubtitles... OK
+Done ヾ(＠⌒ー⌒＠)ノ
+```
 
 ```
 Still in development.
