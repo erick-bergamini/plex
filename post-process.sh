@@ -15,5 +15,5 @@ chmod 664 "${FILE}"
 
 # If this is a movie try to download the trailers
 
-#/opt/scripts/download-trailers.sh "${FOLDER}"
+/opt/scripts/download-trailers.sh "${FOLDER}"
 

@@ -4,7 +4,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 FOLDER="$1"
 
-API_KEY="PUT_YOUR_THEMOVIEDB_API_KEY_HERE"
+API_KEY="59201d23baacaf656f0f900299bfa241"
 LANG="pt-BR"
 M_NFO="movie.nfo"
 M_TRAILER_KEY=""
