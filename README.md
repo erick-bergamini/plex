@@ -71,7 +71,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 - Then I installed aditional packages
 
 ```
-# apt install oracle-java8-jdk git vim htop mediainfo
+# apt install --no-install-recommends oracle-java8-jdk git vim htop mediainfo youtube-dl
 ```
 
 - Add some users to sudo 'cause some scripts require root access
