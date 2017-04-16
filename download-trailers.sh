@@ -1,28 +1,40 @@
 #!/bin/bash
-# Download trailers from themoviedb using API
+#### download-trailers using themoviedb api
+#### this scripts executes in the middle of post-process execution
+#### https://github.com/allangarcia/seedbox-to-plex-automation
+
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+# Input variables
 FOLDER="$1"
 
-API_KEY="PUTYOUTOWNKEYHERE"
+# Global constants
+API_KEY="PUT_YOUR_THEMOVIEDB_API_KEY_HERE"
 LANG="pt-BR"
 M_NFO="movie.nfo"
+
+# Execution variables
 M_TRAILER_KEY=""
 M_TRAILER_NAME=""
 M_TRAILER_YOUTUBE=0
 
 cd "${FOLDER}"
-    
+
 if [ -f $M_NFO ]; then
 
+    # Getting the movie id
     M_ID=$(cat $M_NFO | grep "tmdb" | grep -oP "id='\K[^']*")
 
+    # Asking themoviedb for videos
     M_RESPONSE=$(curl -s -o - --request GET --url "https://api.themoviedb.org/3/movie/${M_ID}/videos?language=${LANG}&api_key=${API_KEY}" --data "{}")
-    
+
+    # Checking if we have some trailers
     M_NUM=$(echo "$M_RESPONSE" | grep -c "Trailer")
-   
+
     if [[ $M_NUM -ge 1 ]]; then
-            
+
+        # Ugly parser, but works
+        # Maybe I should install jq
         IFS=$'},{'
         for M_LINE in `echo "$M_RESPONSE" | grep -oP "\[\K[^\]]*"`; do
             if [[ "$M_LINE" =~ "key" ]]; then
@@ -48,13 +60,7 @@ if [ -f $M_NFO ]; then
               fi
             fi
         done
-            
+
     fi
-        
+
 fi
-
-# sanity check
-chown -R plex: "${FOLDER}"
-find "${FOLDER}" -type f -exec chmod 664 {} \;
-find "${FOLDER}" -type d -exec chmod 775 {} \;
-

@@ -1,16 +1,22 @@
 #!/bin/bash
+#### auto-process download with filebot
+#### this scripts executes right after a download finishes
+#### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+# Input variables
 TORRENT_ID="$1"
 TORRENT_NAME="$2"
 TORRENT_PATH="$3"
 
+# Environment variables
 OUTPUT_PATH="$MEDIA_PATH"
 WORKING_PATH="/opt/filebot/cache"
 
 [ -d $WORKING_PATH ] || mkdir -p $WORKING_PATH
 
+# Main execution
 sudo /opt/filebot/filebot.sh \
 	-script fn:amc \
 	-non-strict \
