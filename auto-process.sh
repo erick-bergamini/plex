@@ -4,16 +4,18 @@
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+[ -r /etc/environment ] && . /etc/environment
 
 # Input variables
 TORRENT_ID="$1"
 TORRENT_NAME="$2"
 TORRENT_PATH="$3"
 
-# Environment variables
-OUTPUT_PATH="$MEDIA_PATH"
+# Global constants
+OUTPUT_PATH="${MEDIA_PATH}"
 WORKING_PATH="/opt/filebot/cache"
 
+# Sanity check
 [ -d $WORKING_PATH ] || mkdir -p $WORKING_PATH
 
 # Main execution
@@ -34,3 +36,8 @@ sudo /opt/filebot/filebot.sh \
 		"ut_kind=multi" \
 		"ut_title=$TORRENT_NAME" \
 		"exec=/opt/scripts/post-process.sh '{file}' '{folder}'"
+
+# Set permissions after duplicate
+chown -R debian-deluged: "${TORRENT_PATH}"
+chmod -R 666 "${TORRENT_PATH}/*"
+

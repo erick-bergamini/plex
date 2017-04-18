@@ -4,6 +4,7 @@
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+[ -r /etc/environment ] && . /etc/environment
 
 # Input variables
 FILE="$1"
@@ -15,7 +16,8 @@ FOLDER="$2"
 # This should be last
 # Setting up the right permissions for plex
 chown -R plex: "${FOLDER}"
-find "${FOLDER}" -type f -exec chmod 664 {} \;
+find "${FOLDER}" -type f -exec chmod 666 {} \;
 find "${FOLDER}" -type d -exec chmod 775 {} \;
 chmod 775 "${FOLDER}"
-chmod 664 "${FILE}"
+chmod 666 "${FILE}"
+

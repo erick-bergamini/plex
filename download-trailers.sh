@@ -4,12 +4,13 @@
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+[ -r /etc/environment ] && . /etc/environment
 
 # Input variables
 FOLDER="$1"
 
 # Global constants
-API_KEY="PUT_YOUR_THEMOVIEDB_API_KEY_HERE"
+API_KEY="${TMDB_KEY}"
 LANG="pt-BR"
 M_NFO="movie.nfo"
 
