@@ -203,6 +203,15 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # chown -R debian-deluged.debian-deluged Torrents
 ```
 
+- Make directories to hold your media
+
+```
+# cd /mnt/media
+# mkdir Movies TV\ Shows
+# chown -R plex: Movies
+# chown -R plex: TV\ Shows
+```
+
 - Export to env the place of your media
 
 ```
