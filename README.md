@@ -232,9 +232,15 @@ Done ヾ(＠⌒ー⌒＠)ノ
 
 - Configure your TMDB API key to autenticate into the site
 
+PS: This is a required for trailers to work
+
 ```
 # echo TMDB_KEY="PUT_YOUR_THEMOVIEDB_API_KEY_HERE" >> /etc/environment
 ```
+
+- Configure plex to index your media on previouly created media directories
+
+This article may be helpful: https://support.plex.tv/hc/en-us/articles/200264746-Quick-Start-Step-by-Step-Guides
 
 ```
 Still in development.
