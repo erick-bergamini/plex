@@ -221,6 +221,12 @@ Testing OpenSubtitles... OK
 Done ヾ(＠⌒ー⌒＠)ノ
 ```
 
+- Configure your TMDB API key to autenticate into the site
+
+```
+# echo TMDB_KEY="PUT_YOUR_THEMOVIEDB_API_KEY_HERE" >> /etc/environment
+```
+
 ```
 Still in development.
 ```
