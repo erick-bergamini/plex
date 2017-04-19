@@ -16,7 +16,7 @@ Collection of bash scripts to automate my plexmediaserver
 ## Configure your stuff
 
 - Change your passwords and add your users
-- Configure any aditional interfaces, wired is always preferred.
+- Configure any additional interfaces, wired is always preferred.
 - Configure your hostname
 
 ```
@@ -55,7 +55,7 @@ Collection of bash scripts to automate my plexmediaserver
 # apt install deluged deluge-console deluge-web
 # sed -i "s/ENABLE_DELUGED=0/ENABLE_DELUGED=1/" /etc/default/deluged
 # service deluged start
-# echo "deluged:deluged:10" >> /var/lib/deluged/config/auth 
+# echo "deluged:deluged:10" >> /var/lib/deluged/config/auth
 ```
 
 PS: No init script is provided for __deluge-web__ package unfortunately, so install mine. ;-D
