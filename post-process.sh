@@ -1,6 +1,6 @@
 #!/bin/bash
 #### post-process after filebot do its job
-#### this scripts executes after filebot renames
+#### this script executes after filebot renames on the destination folder
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"

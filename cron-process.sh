@@ -1,6 +1,6 @@
 #!/bin/bash
 #### cron-process keeps media organized
-#### this scripts executes daily
+#### this script executes daily
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"

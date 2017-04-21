@@ -1,6 +1,6 @@
 #!/bin/bash
 #### auto-process download with filebot
-#### this scripts executes right after a download finishes
+#### this script executes right after a download finishes
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"

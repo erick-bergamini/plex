@@ -1,6 +1,6 @@
 #!/bin/bash
 #### download-trailers using themoviedb api
-#### this scripts executes in the middle of post-process execution
+#### this script executes in the middle of post-process execution
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"

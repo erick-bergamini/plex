@@ -70,7 +70,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # systemctl status deluge-web
 ```
 
-- Then I installed aditional packages
+- Then I installed additional packages
 
 ```
 # apt install --no-install-recommends oracle-java8-jdk git rsync vim htop mediainfo youtube-dl

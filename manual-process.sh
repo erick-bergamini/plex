@@ -1,6 +1,6 @@
 #!/bin/bash
 #### manual-process
-#### this scripts executes the auto-process on a given path
+#### this script executes the auto-process on a given path
 #### https://github.com/allangarcia/seedbox-to-plex-automation
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -15,4 +15,3 @@ for DIR in `ls -1 "${ORIGIN}"`; do
     echo "Manual processing: ${ORIGIN}${DIR}"
     ./auto-process.sh "ID" "${DIR}" "${ORIGIN}"
 done
-
