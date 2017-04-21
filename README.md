@@ -1,5 +1,5 @@
 # seedbox-to-plex-automation
-Collection of bash scripts to automate my plexmediaserver
+Collection of bash scripts to automate my Plex + Deluge + CouchPotato + SickRage
 
 # How did I installed my Plex on Raspberry Pi 3?
 
@@ -13,22 +13,21 @@ Collection of bash scripts to automate my plexmediaserver
 - I'm using a NOOBs Lite version installer (https://www.raspberrypi.org/downloads/noobs/) and doing a Raspbian Lite (minimal) install
 - Default user "pi", default password "raspberry"
 
-## Configure your stuff
+PS: No SSH access this first time
 
-- Change your passwords and add your users
-- Configure any additional interfaces, wired is always preferred.
-- Configure your hostname
+- Using the console start raspbian configuration tool
 
 ```
-# hostname-ctl set-hostname plex
+$ sudo raspi-config
 ```
 
-- Edit your /etc/hosts accordingly
-- Configure your timezone
+- Things to consider to configure
 
-```
-# dpkg-reconfigure tzdata
-```
+ - Change default passwords
+ - Change hostname
+ - Enable SSH in "Interfacing Options"
+ - Update
+ - Maybe you want to create your own user after reboot
 
 ## Beginning the installation
 
@@ -46,7 +45,7 @@ Collection of bash scripts to automate my plexmediaserver
 # wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
 # echo "deb https://dev2day.de/pms/ jessie main" | tee /etc/apt/sources.list.d/pms.list
 # apt update
-# apt install -t jessie plexmediaserver
+# apt install plexmediaserver
 ```
 
 - Then I installed my seedbox packages
@@ -54,7 +53,10 @@ Collection of bash scripts to automate my plexmediaserver
 ```
 # apt install deluged deluge-console deluge-web
 # sed -i "s/ENABLE_DELUGED=0/ENABLE_DELUGED=1/" /etc/default/deluged
-# service deluged start
+# service deluged restart
+```
+PS: Make sure the service is started before next command
+```
 # echo "deluged:deluged:10" >> /var/lib/deluged/config/auth
 ```
 
@@ -71,7 +73,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 - Then I installed aditional packages
 
 ```
-# apt install --no-install-recommends oracle-java8-jdk git vim htop mediainfo youtube-dl
+# apt install --no-install-recommends oracle-java8-jdk git rsync vim htop mediainfo youtube-dl
 ```
 
 - Add some users to sudo 'cause some scripts require root access
@@ -94,11 +96,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 ```
 # mkdir -p /opt/filebot
 # cd /opt/filebot
-# wget https://github.com/filebot/filebot/raw/master/installer/portable/update-filebot.sh
-# wget https://github.com/filebot/filebot/raw/master/installer/portable/filebot.sh
-# chmod +x update-filebot.sh
-# chmod +x filebot.sh
-# /opt/filebot/update-filebot.sh
+# sh -xu <<< "$(curl -fsSL https://raw.githubusercontent.com/filebot/plugins/master/installer/portable.sh)"
 # /opt/filebot/filebot.sh
 ```
 
@@ -109,15 +107,17 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # addgroup --system sickrage
 # adduser --disabled-password --system --home /var/lib/sickrage --gecos "SickRage" --ingroup sickrage sickrage
 # git clone https://github.com/SickRage/SickRage.git sickrage
-# chown sickrage:sickrage /opt/sickrage
+# chown -R sickrage.sickrage /opt/sickrage
 # cp /opt/sickrage/runscripts/init.debian /etc/init.d/sickrage
-# chown root:root /etc/init.d/sickrage
+# chown root.root /etc/init.d/sickrage
 # chmod 755 /etc/init.d/sickrage
 # update-rc.d sickrage defaults
 # mkdir -p /var/run/sickrage
-# chown sickrage:sickrage /var/run/sickrage
+# chown sickrage.sickrage /var/run/sickrage
 # service sickrage start
 ```
+
+PS: The first start takes a little longer
 
 - Install couchpotato
 
@@ -126,13 +126,13 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # addgroup --system couchpotato
 # adduser --disabled-password --system --home /var/lib/couchpotato --gecos "CouchPotato" --ingroup couchpotato couchpotato
 # git clone https://github.com/CouchPotato/CouchPotatoServer.git couchpotato
-# chown couchpotato:couchpotato /opt/couchpotato
+# chown -R couchpotato.couchpotato /opt/couchpotato
 # cp couchpotato/init/ubuntu /etc/init.d/couchpotato
-# chown root:root /etc/init.d/couchpotato
+# chown root.root /etc/init.d/couchpotato
 # chmod 755 /etc/init.d/couchpotato
 # update-rc.d couchpotato defaults
 # mkdir -p /var/run/couchpotato
-# chown couchpotato:couchpotato /var/run/couchpotato
+# chown couchpotato.couchpotato /var/run/couchpotato
 # service couchpotato start
 ```
 
@@ -198,7 +198,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # cd /mnt/media
 # mkdir Torrents
 # cd Torrents
-# mkdir Backups Completed Downloading Inbox
+# mkdir Completed Downloading Inbox
 # cd /mnt/media
 # chown -R debian-deluged.debian-deluged Torrents
 ```
