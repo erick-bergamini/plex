@@ -199,6 +199,7 @@ PS: The first start takes a little longer
 # mkdir Torrents
 # cd Torrents
 # mkdir Completed Downloading Inbox
+# chmod 777 Inbox
 # cd /mnt/media
 # chown -R debian-deluged.debian-deluged Torrents
 ```
