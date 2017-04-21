@@ -25,9 +25,8 @@ find ${MEDIA_PATH}/TV\ Shows/ -type f -iregex "^.*\.\(mkv\|mp4\|m4v\|avi\)$" -ex
 
 chown -R plex: ${MEDIA_PATH}/Movies/
 find ${MEDIA_PATH}/Movies/ -type f -exec chmod 666 {} \;
-find ${MEDIA_PATH}/Movies/ -type d -exec chmod 775 {} \;
+find ${MEDIA_PATH}/Movies/ -type d -exec chmod 777 {} \;
 
 chown -R plex: ${MEDIA_PATH}/TV\ Shows/
 find ${MEDIA_PATH}/TV\ Shows/ -type f -exec chmod 666 {} \;
-find ${MEDIA_PATH}/TV\ Shows/ -type d -exec chmod 775 {} \;
-
+find ${MEDIA_PATH}/TV\ Shows/ -type d -exec chmod 777 {} \;

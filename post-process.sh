@@ -17,7 +17,6 @@ FOLDER="$2"
 # Setting up the right permissions for plex
 chown -R plex: "${FOLDER}"
 find "${FOLDER}" -type f -exec chmod 666 {} \;
-find "${FOLDER}" -type d -exec chmod 775 {} \;
-chmod 775 "${FOLDER}"
+find "${FOLDER}" -type d -exec chmod 777 {} \;
+chmod 777 "${FOLDER}"
 chmod 666 "${FILE}"
-

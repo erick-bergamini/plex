@@ -37,7 +37,5 @@ sudo /opt/filebot/filebot.sh \
 		"ut_title=$TORRENT_NAME" \
 		"exec=/opt/scripts/post-process.sh '{file}' '{folder}'"
 
-# Set permissions after duplicate
-chown -R debian-deluged: "${TORRENT_PATH}"
-chmod -R 666 "${TORRENT_PATH}/*"
-
+# Remove original directory after duplicate
+rm -rf "$TORRENT_PATH/$TORRENT_NAME"
