@@ -6,6 +6,11 @@
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 [ -r /etc/environment ] && . /etc/environment
 
+# Clean all left over media
+
+filebot -script fn:cleaner ${MEDIA_PATH}/Movies/
+filebot -script fn:cleaner ${MEDIA_PATH}/TV\ Shows/
+
 #TODO: Check here if the subtitles was found
 #### if subtitle was ok on this movie, add it to exclude list
 #### Change the above find command to exclude paths from exclude list

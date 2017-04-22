@@ -27,6 +27,7 @@ sudo /opt/filebot/filebot.sh \
 	--output "${OUTPUT_PATH}" \
 	--log-file "${WORKING_PATH}/filebot-process.log" \
 	--def \
+		plex=127.0.0.1 \
 		subtitles=eng,pob \
 		extras=n \
 		unsorted=y \
@@ -38,4 +39,5 @@ sudo /opt/filebot/filebot.sh \
 		"exec=/opt/scripts/post-process.sh '{file}' '{folder}'"
 
 # Remove original directory after duplicate
-rm -rf "$TORRENT_PATH/$TORRENT_NAME"
+sleep 60
+rm -rf "${TORRENT_PATH}/${TORRENT_NAME}"

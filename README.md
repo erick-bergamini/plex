@@ -243,6 +243,12 @@ PS: This is a required for trailers to work
 
 This article may be helpful: https://support.plex.tv/hc/en-us/articles/200264746-Quick-Start-Step-by-Step-Guides
 
+- Enable cron-process script
+
+```
+# echo -e "00 10\t* * *\troot\t/opt/scripts/cron-process.sh" >> /etc/crontab
+```
+
 ```
 Still in development.
 ```
