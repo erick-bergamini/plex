@@ -263,7 +263,7 @@ This article may be helpful: https://support.plex.tv/hc/en-us/articles/200264746
 # echo -e "00 10\t* * *\troot\t/opt/scripts/cron-process.sh" >> /etc/crontab
 ```
 
-- Configuring the deluge
+- Configuring Deluge
 
 Point your browser to http://<YOUR_RPI3_IP>:8112/
 
@@ -313,6 +313,77 @@ Choose "On Complete" and configure the script "auto-process.sh"
 
 ![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D4.png)
 
+Should look like this
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D5.png)
+
+Configure bandwith accordinly to your connection speed, mine works fine like this.
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20E1.png)
+
+Configure stop seeding after certain ratio, for me 1 (one) is ok, mark remove after ratio
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20F1.png)
+
+- Configure CouchPotato
+
+Point your browser to http://<YOUR_RPI3_IP>:5050/
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G1.png)
+
+Enable only Black Hole downloader
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G2.png)
+
+Enable you preffered search provider, I preffer YTS
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G3.png)
+
+Go to settings
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G4.png)
+
+Searcher
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G5.png)
+
+Quality Profiles
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G6.png)
+
+Enable "Show advanced", and go to sizes
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G7.png)
+
+Change 1080p to min 800 and 720p to min 500, this is only if you use YTS provider
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20G8.png)
+
+- Configuring sickrage
+
+Point your browser to http://<YOUR_RPI3_IP>:8081/
+
+Go to Configuration -> General Configuration -> Misc
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20H1.png)
+
+On "Show root directories" put your configured media directory for shows
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20H2.png)
+
+On Search Settings disable NZB Search (I'm using only torrent)
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20I1.png)
+
+Enable Torrent and send files to Black Hole like image bellow
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20I2.png)
+
+Enable your preffered provider, mine is RARBG for TV Shows, move to top.
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20I3.png)
+
+- After all this configuration your seedbox should work perfectly, any suggestion is appreciated. If your maded 'til here leave a comment on this project.
 
 ```
 Still in development.
