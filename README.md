@@ -263,6 +263,57 @@ This article may be helpful: https://support.plex.tv/hc/en-us/articles/200264746
 # echo -e "00 10\t* * *\troot\t/opt/scripts/cron-process.sh" >> /etc/crontab
 ```
 
+- Configuring the deluge
+
+Point your browser to http://<YOUR_RPI3_IP>:8112/
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20A1.png)
+
+You have to login with the default password "deluge"
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20A2.png)
+
+Change your password on first login
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20A3.png)
+
+Choose a better password or NONE, if you don't care about security
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20A4.png)
+
+The connection should work fine, but if not, configure the connection
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20B1.png)
+
+Use deluged, deluged as user and password on localhost
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20B2.png)
+
+Then the conection should work
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20B3.png)
+
+Configure the directories as shown
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20C1.png)
+
+Enable the plugin "execute"
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D1.png)
+
+Configure plugin "execute"
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D2.png)
+
+Add a new event
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D3.png)
+
+Choose "On Complete" and configure the script "auto-process.sh"
+
+![](https://github.com/allangarcia/seedbox-to-plex-automation/raw/master/docs/Tela%20D4.png)
+
+
 ```
 Still in development.
 ```
