@@ -1,6 +1,20 @@
 # seedbox-to-plex-automation
 Collection of bash scripts to automate my Plex + Deluge + CouchPotato + SickRage
 
+# The FLOW works like this
+
+```
+[ CouchPotato (Movies) ] - \
+                            \                                          
+                             \                              / - > [ FileBot ] - \
+                              \                            /                     \
+[ Manually ] - - - - - - > [ Deluged ] - > [ Scripts! ] - |                       | - > [ Plex ]
+                              /                            \                     /
+                             /                              \ - > [ Trailer ] - /
+                            /
+ [ SickRage (TV Shows) ] - /
+```
+
 # How did I installed my Plex on Raspberry Pi 3?
 
 ## This is my hardware
@@ -23,11 +37,11 @@ $ sudo raspi-config
 
 - Things to consider to configure
 
- - Change default passwords
- - Change hostname
- - Enable SSH in "Interfacing Options"
- - Update
- - Maybe you want to create your own user after reboot
+  - Change default passwords
+  - Change hostname
+  - Enable SSH in "Interfacing Options"
+  - Update
+  - Maybe you want to create your own user after reboot
 
 ## Beginning the installation
 
@@ -85,13 +99,13 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 
 ## Download the raw stuff
 
-- Install all your stuff on /opt
+- I install all my non distro things on /opt
 
 ```
 # cd /opt
 ```
 
-- Install filebot
+- Filebot! This is the best renaming tool (don't fool yourself by enabling rename on other tools)
 
 ```
 # mkdir -p /opt/filebot
@@ -100,7 +114,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 # /opt/filebot/filebot.sh
 ```
 
-- Install sickrage
+- Sickrage! I use this only to get .torrent file into deluge Inbox folder
 
 ```
 # cd /opt
@@ -119,7 +133,7 @@ PS: No init script is provided for __deluge-web__ package unfortunately, so inst
 
 PS: The first start takes a little longer
 
-- Install couchpotato
+- Couchpotato! Same thing as Sickrage for movies
 
 ```
 # cd /opt
@@ -136,7 +150,7 @@ PS: The first start takes a little longer
 # service couchpotato start
 ```
 
-- Clone this project
+- Clone this project! This will do so much for you...
 
 ```
 # cd /opt
@@ -170,7 +184,7 @@ PS: The first start takes a little longer
 /dev/sda1: UUID="a01e4f27-1f10-42dc-bf94-a4e48d7b9bfe" TYPE="ext4" PARTUUID="5850a332-01"
 ```
 
-- Download the mount file for systemd and enable it
+- Download the mount file for systemd
 
 ```
 # cd /etc/systemd/system
